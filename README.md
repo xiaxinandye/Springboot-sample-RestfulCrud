@@ -1,6 +1,6 @@
 # 介绍
 
-此 Demo 是为了熟悉 Spring Boot和 thymeleaf 的使用，所以适用于刚接触 Spring Boot不久的新手，此项目是一个简单的 Web 版的员工 CRUD，项目内容来源于[尚硅谷谷粒学院 Spring Boot 核心技术篇](http://www.gulixueyuan.com/course/231)，我根据自己的理解，又重新地动手做了一些，其中也发现了一些自己的薄弱点，并针对这些薄弱点进行巩固，以便尽快掌握 Spring Boot。
+此 Demo 是为了熟悉 Spring Boot 和 thymeleaf 的使用，所以适用于刚接触 Spring Boot 不久的新手，此项目是一个简单的 Web 版的员工 CRUD，项目内容来源于[尚硅谷谷粒学院 Spring Boot 核心技术篇 ](http://www.gulixueyuan.com/course/231)，我根据自己的理解，又重新地动手做了一些，其中也发现了一些自己的薄弱点，并针对这些薄弱点进行巩固，以便尽快掌握 Spring Boot。
 
 # 一、 创建 Spring Boot 项目
 
@@ -58,22 +58,22 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--引入jquery webjars-->
-        <!--使用时：路径webjars/jquery/3.3.1/jquery.js-->
+        <!--引入 jquery webjars-->
+        <!--使用时：路径 webjars/jquery/3.3.1/jquery.js-->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
             <version>3.3.1</version>
         </dependency>
 
-        <!--引入bootstrap webjars-->
+        <!--引入 bootstrap webjars-->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
             <version>4.2.1</version>
         </dependency>
 
-        <!--引入thymeleaf3-->
+        <!--引入 thymeleaf3-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -124,7 +124,7 @@
 │  │      └─templates
 │  │              login.html
 
-使用 thymeleaf  对 login.html 完成 css、js等链接的修改
+使用 thymeleaf  对 login.html 完成 css、js 等链接的修改
 
 ```html
 <!DOCTYPE html>
@@ -156,7 +156,7 @@
          </div>
          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
          <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
-         <a class="btn btn-sm">中文</a>
+         <a class="btn btn-sm"> 中文 </a>
          <a class="btn btn-sm">English</a>
       </form>
 
@@ -194,4 +194,5 @@ public class HomePageController {
 
 ## 阶段效果图
 
-![](http://images.cnblogs.com/cnblogs_com/yunche/1374164/o_demo1.gif)
+<div align="center">  <img src="https://github.com/xiaxinandye/Springboot-sample-RestfulCrud/raw/master/img/demo1.gif?raw=true" width=""/> </div><br>
+
