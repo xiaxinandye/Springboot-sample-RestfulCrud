@@ -10,6 +10,7 @@
 
 - 项目结构目录示意图：
 
+  ```
   ├─src
   │  ├─main
   │  │  ├─java
@@ -24,6 +25,7 @@
   │  │      │      ├─img
   │  │      │      └─js
   │  │      └─templates
+  ```
 
 # 二、引入依赖并完成登录页面的样式
 
@@ -102,6 +104,7 @@
 
 将对应的文件引入到相应的位置
 
+```
 │  │      ├─static
 │  │      │  └─asserts
 │  │      │      ├─css
@@ -118,11 +121,14 @@
 │  │      │              feather.min.js
 │  │      │              jquery-3.2.1.slim.min.js
 │  │      │              popper.min.js
+```
 
 ## 3、编辑 login.html 
 
+```
 │  │      └─templates
 │  │              login.html
+```
 
 使用 thymeleaf  对 login.html 完成 css、js 等链接的修改
 
@@ -167,8 +173,10 @@
 
 ## 4、处理对 login 页面请求的映射
 
+```
 │  │  │          └─controller
 │  │  │                  HomePageController.java
+```
 
 ```java
 package com.yunche.controller;
