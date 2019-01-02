@@ -264,7 +264,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
   spring.messages.basename=i18n.login
   ```
 
-  <div align="center">  <img src="E:/OneDrive/springboot-sample-restfulcrud/img/demo2.gif" width=""/> </div><br>
+  <div align="center">  <img src="/img/demo2.gif" width=""/> </div><br>
 
 - 实现按钮手动转换语言
 
@@ -352,4 +352,3 @@ public class MyMvcConfig implements WebMvcConfigurer {
 ## 6、阶段演示效果
 
 <div align="center">  <img src="/img/demo3.gif" width=""/> </div><br>
-
