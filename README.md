@@ -27,7 +27,7 @@
   │  │      └─templates
   ```
 
-# 二、引入依赖并完成登录页面的样式
+# 二、定制首页
 
 ## 1、修改 pom.xml
 
@@ -174,33 +174,182 @@
 ## 4、处理对 login 页面请求的映射
 
 ```
+│  │  │          ├─config
+│  │  │          │      MyMvcConfig.java
+│  │  │          │      
 │  │  │          └─controller
-│  │  │                  HomePageController.java
 ```
 
-```java
-package com.yunche.controller;
+扩展 Spring MVC，添加视图控制器，完成我们自己的路径的映射规则
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+```java
+package com.yunche.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @ClassName: HomePageController
- * @Description:
+ * @ClassName: MyMvcConfig
+ * @Description: 练习：使用 WebMvcConfigurer 扩展 SpringMVC 的功能
  * @author: yunche
- * @date: 2018/12/31
+ * @date: 2019/01/01
  */
-@Controller
-public class HomePageController {
 
-    @RequestMapping(value = {"/", "/index.html", "/index", "login"})
-    public String index() {
-        return "login";
+@Configuration
+public class MyMvcConfig implements WebMvcConfigurer {
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("login");
+        registry.addViewController("/index.html").setViewName("login");
+        registry.addViewController("/index").setViewName("login");
     }
 }
 ```
 
-## 阶段效果图
+## 5、国际化登录页面
 
-<div align="center">  <img src="https://github.com/xiaxinandye/Springboot-sample-RestfulCrud/raw/master/img/demo1.gif?raw=true" width=""/> </div><br>
+- 编写国际化文件
+
+  ```
+  │  │  └─resources
+  │  │      │  application.properties
+  │  │      │  
+  │  │      ├─i18n
+  │  │      │      login.en_US.properties
+  │  │      │      login.properties
+  │  │      │      login.zh_CN.properties
+  ```
+
+  - login_en_US.properties:
+
+    ```properties
+    login.btn=Sign In
+    login.password=Password
+    login.remember=Remember Me
+    login.tip=Please Sign In
+    login.username=Username
+    ```
+
+  - login.properties:
+
+    ```properties
+    login.btn=登录
+    login.password=密码
+    login.remember=记住我
+    login.tip=请登录
+    login.username=用户名
+    ```
+
+  - login_zh_CN.properties:
+
+    ```properties
+    login.btn=登录
+    login.password=密码
+    login.remember=记住我
+    login.tip=请登录
+    login.username=用户名
+    ```
+
+- 绑定编写的国际化配置文件到 Message Source
+
+  ```
+  │  │  └─resources
+  │  │      │  application.properties
+  ```
+
+  application.properties:
+
+  ```properties
+  spring.messages.basename=i18n.login
+  ```
+
+  <div align="center">  <img src="E:/OneDrive/springboot-sample-restfulcrud/img/demo2.gif" width=""/> </div><br>
+
+- 实现按钮手动转换语言
+
+  - 国际化有效的原理：
+
+    Locale 对象存储区域信息， 根据 Locale 来自适应语言配置，默认的`LocaleResolver`就是根据请求头带来的区域信息（`Accept-Language`）获取 Locale 对象。如果需要手动转换语言只需要手动构造`LocaleResolver`来自定义生成 Locale 对象的规则。
+
+  - 定制 LocaleResolver：
+
+    ```
+    │  │  │          ├─component
+    │  │  │          │      MyLocaleResolver.java
+    ```
+
+    MyLocaleResolver.java:
+
+    ```java
+    package com.yunche.component;
+    
+    import org.springframework.stereotype.Component;
+    import org.springframework.web.servlet.LocaleResolver;
+    import org.thymeleaf.util.StringUtils;
+    
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
+    import java.util.Locale;
+    
+    /**
+     * @ClassName: MyLocaleResolver
+     * @Description:
+     * @author: yunche
+     * @date: 2019/01/01
+     */
+    @Component
+    public class MyLocaleResolver implements LocaleResolver {
+        @Override
+        public Locale resolveLocale(HttpServletRequest request) {
+            String l = request.getParameter("l");
+            Locale locale = Locale.getDefault();
+            if (!StringUtils.isEmpty(l)) {
+                String[] split = l.split("_");
+                //根据 Language、Country 生成 locale
+                locale = new Locale(split[0], split[1]);
+            }
+            return locale;
+        }
+    
+        @Override
+        public void setLocale(HttpServletRequest request, HttpServletResponse response, Locale locale) {
+    
+        }
+    }
+    ```
+
+  - 将定制的组件加入容器中
+
+    此时默认的 LocaleResolver 将不再生效，将使用我们定制的 LocaleResolver。
+
+    ```
+    │  │  │          ├─config
+    │  │  │          │      MyMvcConfig.java
+    ```
+
+    MyMvcConfig.java:
+
+    ```java
+    /**
+     * 注册定制组件
+     */
+    @Bean
+    public LocaleResolver localeResolver() {
+        return new MyLocaleResolver();
+    }
+    ```
+
+  - 添加相应的链接参数
+
+    login.html:
+
+    ```html
+    <a class="btn btn-sm" th:href="@{/index(l='zh_CN')}"> 中文 </a>
+    <a class="btn btn-sm" th:href="@{/index(l='en_US')}">English</a>
+    ```
+
+## 6、阶段演示效果
+
+<div align="center">  <img src="/img/demo3.gif" width=""/> </div><br>
 

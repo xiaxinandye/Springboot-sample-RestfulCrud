@@ -15,20 +15,20 @@
 	<body class="text-center">
 		<form class="form-signin" action="dashboard.html">
 			<img class="mb-4" src="asserts/img/bootstrap-solid.svg" alt="" width="72" height="72">
-			<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-			<label class="sr-only">Username</label>
-			<input type="text" class="form-control" placeholder="Username" required="" autofocus="">
-			<label class="sr-only">Password</label>
-			<input type="password" class="form-control" placeholder="Password" required="">
+			<h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">Please Sign In</h1>
+			<label class="sr-only" th:text="#{login.username}">Username</label>
+			<input type="text" class="form-control" placeholder="Username" th:placeholder="#{login.username}" required="" autofocus="">
+			<label class="sr-only" th:text="#{login.password}">Password</label>
+			<input type="password" class="form-control" placeholder="Password" required="" th:placeholder="#{login.password}">
 			<div class="checkbox mb-3">
 				<label>
-          <input type="checkbox" value="remember-me"> Remember me
+          <input type="checkbox" value="remember-me" > [[#{login.remember}]]
         </label>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			<button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.btn}">Sign in</button>
 			<p class="mt-5 mb-3 text-muted">© 2017-2018</p>
-			<a class="btn btn-sm">中文</a>
-			<a class="btn btn-sm">English</a>
+			<a class="btn btn-sm" th:href="@{/index(l='zh_CN')}">中文</a>
+			<a class="btn btn-sm" th:href="@{/index(l='en_US')}">English</a>
 		</form>
 
 	</body>
