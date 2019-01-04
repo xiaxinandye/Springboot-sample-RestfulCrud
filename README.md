@@ -1,37 +1,76 @@
-# ä»‹ç»
+<!-- GFM-TOC -->
+* [½éÉÜ](#½éÉÜ)
+* [Áã¡¢ÏîÄ¿ËØ²Ä](#ÁãÏîÄ¿ËØ²Ä)
+* [Ò»¡¢ ´´½¨ Spring Boot ÏîÄ¿](#Ò»-´´½¨-spring-boot-ÏîÄ¿)
+* [¶ş¡¢¶¨ÖÆÊ×Ò³](#¶ş¶¨ÖÆÊ×Ò³)
+    * [1¡¢ĞŞ¸Ä pom.xml](#1ĞŞ¸Ä-pomxml)
+    * [2¡¢ÒıÈëÏàÓ¦µÄ±¾µØ css¡¢js ÎÄ¼ş](#2ÒıÈëÏàÓ¦µÄ±¾µØ-cssjs-ÎÄ¼ş)
+    * [3¡¢±à¼­ login.html](#3±à¼­-loginhtml)
+    * [4¡¢´¦Àí¶Ô login Ò³ÃæÇëÇóµÄÓ³Éä](#4´¦Àí¶Ô-login-Ò³ÃæÇëÇóµÄÓ³Éä)
+    * [5¡¢¹ú¼Ê»¯µÇÂ¼Ò³Ãæ](#5¹ú¼Ê»¯µÇÂ¼Ò³Ãæ)
+    * [6¡¢½×¶ÎÑİÊ¾Ğ§¹û](#6½×¶ÎÑİÊ¾Ğ§¹û)
+* [Èı¡¢Íê³É login ²Ù×÷](#ÈıÍê³É-login-²Ù×÷)
+    * [1¡¢Ìí¼Ó¿ØÖÆÆ÷ÓÃÓÚ´¦ÀíÇëÇó](#1Ìí¼Ó¿ØÖÆÆ÷ÓÃÓÚ´¦ÀíÇëÇó)
+    * [2¡¢Ìí¼ÓºóÌ¨Ê×Ò³ dashboard.html](#2Ìí¼ÓºóÌ¨Ê×Ò³-dashboardhtml)
+    * [3¡¢Ìí¼ÓµÇÂ¼´íÎóÏûÏ¢Õ¹Ê¾](#3Ìí¼ÓµÇÂ¼´íÎóÏûÏ¢Õ¹Ê¾)
+    * [4¡¢¶¨ÖÆÀ¹½ØÆ÷](#4¶¨ÖÆÀ¹½ØÆ÷)
+* [ËÄ¡¢Ô±¹¤µÄ CRUD](#ËÄÔ±¹¤µÄ-crud)
+    * [1¡¢ÒıÈëÏàÓ¦µÄ dao ºÍ entity Àà](#1ÒıÈëÏàÓ¦µÄ-dao-ºÍ-entity-Àà)
+    * [2¡¢Restful ·ç¸ñµÄ URL](#2restful-·ç¸ñµÄ-url)
+    * [3¡¢Ä£°å²¼¾Ö](#3Ä£°å²¼¾Ö)
+        * [1¡¢dashboard.html£¨ºóÌ¨Ê×Ò³£©](#1dashboardhtmlºóÌ¨Ê×Ò³)
+        * [2¡¢sidebar.html£¨²à±ßÀ¸Ä£°å£©](#2sidebarhtml²à±ßÀ¸Ä£°å)
+        * [3¡¢topbar.html£¨¶¥²¿À¸Ä£°å£©](#3topbarhtml¶¥²¿À¸Ä£°å)
+        * [4¡¢list.html£¨Ô±¹¤ÁĞ±íÒ³Ãæ£©](#4listhtmlÔ±¹¤ÁĞ±íÒ³Ãæ)
+        * [5¡¢add.html£¨Ô±¹¤µÄÌí¼Ó¡¢ĞŞ¸Ä¶şºÏÒ»Ò³Ãæ£©](#5addhtmlÔ±¹¤µÄÌí¼ÓĞŞ¸Ä¶şºÏÒ»Ò³Ãæ)
+    * [4¡¢EmployeeController£¨´¦ÀíÔ±¹¤ÇëÇó¿ØÖÆÆ÷£©](#4employeecontroller´¦ÀíÔ±¹¤ÇëÇó¿ØÖÆÆ÷)
+    * [5¡¢Ï¸½Ú½²½â](#5Ï¸½Ú½²½â)
+        * [1¡¢PUT¡¢DELTE ÇëÇó](#1putdelte-ÇëÇó)
+        * [2¡¢¸øÄ£°åÒ³Ãæ´«²Î](#2¸øÄ£°åÒ³Ãæ´«²Î)
+        * [3¡¢Ìí¼Ó¡¢ĞŞ¸ÄÒ³Ãæ¹²ÓÃ](#3Ìí¼ÓĞŞ¸ÄÒ³Ãæ¹²ÓÃ)
+    * [6¡¢¶¨ÖÆ´íÎóÒ³Ãæ](#6¶¨ÖÆ´íÎóÒ³Ãæ)
+    * [7¡¢½×¶ÎÑİÊ¾Ğ§¹û](#7½×¶ÎÑİÊ¾Ğ§¹û)
+<!-- GFM-TOC -->
 
-æ­¤ Demo æ˜¯ä¸ºäº†ç†Ÿæ‚‰ Spring Boot å’Œ thymeleaf çš„ä½¿ç”¨ï¼Œæ‰€ä»¥é€‚ç”¨äºåˆšæ¥è§¦ Spring Boot ä¸ä¹…çš„æ–°æ‰‹ï¼Œæ­¤é¡¹ç›®æ˜¯ä¸€ä¸ªç®€å•çš„ Web ç‰ˆçš„å‘˜å·¥ CRUDï¼Œé¡¹ç›®å†…å®¹æ¥æºäº[å°šç¡…è°·è°·ç²’å­¦é™¢ Spring Boot æ ¸å¿ƒæŠ€æœ¯ç¯‡ ](http://www.gulixueyuan.com/course/231)ï¼Œæˆ‘æ ¹æ®è‡ªå·±çš„ç†è§£ï¼Œåˆé‡æ–°åœ°åŠ¨æ‰‹åšäº†ä¸€äº›ï¼Œå…¶ä¸­ä¹Ÿå‘ç°äº†ä¸€äº›è‡ªå·±çš„è–„å¼±ç‚¹ï¼Œå¹¶é’ˆå¯¹è¿™äº›è–„å¼±ç‚¹è¿›è¡Œå·©å›ºï¼Œä»¥ä¾¿å°½å¿«æŒæ¡ Spring Bootã€‚
 
-# ä¸€ã€ åˆ›å»º Spring Boot é¡¹ç›®
+# ½éÉÜ
 
-- å¼€å‘å·¥å…·ï¼šIDEA
+´Ë Demo ÊÇÎªÁËÊìÏ¤ Spring Boot ºÍ thymeleaf µÄÊ¹ÓÃ£¬ËùÒÔÊÊÓÃÓÚ¸Õ½Ó´¥ Spring Boot ²»¾ÃµÄĞÂÊÖ£¬´ËÏîÄ¿ÊÇÒ»¸ö¼òµ¥µÄ Web °æµÄÔ±¹¤ CRUD£¬ÏîÄ¿ÄÚÈİÀ´Ô´ÓÚ[ÉĞ¹è¹È¹ÈÁ£Ñ§Ôº Spring Boot ºËĞÄ¼¼ÊõÆª ](http://www.gulixueyuan.com/course/231)£¬ÎÒ¸ù¾İ×Ô¼ºµÄÀí½â£¬ÓÖÖØĞÂµØ¶¯ÊÖ×öÁËÒ»Ğ©£¬ÆäÖĞÒ²·¢ÏÖÁËÒ»Ğ©×Ô¼ºµÄ±¡Èõµã£¬²¢Õë¶ÔÕâĞ©±¡Èõµã½øĞĞ¹®¹Ì£¬ÒÔ±ã¾¡¿ìÕÆÎÕ Spring Boot¡£
 
-- åˆ›å»ºæ–¹å¼ï¼šä½¿ç”¨ Spring Initializr æ–¹å¼åˆ›å»º
+# Áã¡¢ÏîÄ¿ËØ²Ä
 
-- é¡¹ç›®ç»“æ„ç›®å½•ç¤ºæ„å›¾ï¼š
+[restful-crud-experiment](/restful-crud-experiment)
+
+# Ò»¡¢ ´´½¨ Spring Boot ÏîÄ¿
+
+- ¿ª·¢¹¤¾ß£ºIDEA
+
+- ´´½¨·½Ê½£ºÊ¹ÓÃ Spring Initializr ·½Ê½´´½¨
+
+- ÏîÄ¿½á¹¹Ä¿Â¼Ê¾ÒâÍ¼£º
 
   ```
-  â”œâ”€src
-  â”‚  â”œâ”€main
-  â”‚  â”‚  â”œâ”€java
-  â”‚  â”‚  â”‚  â””â”€com
-  â”‚  â”‚  â”‚      â””â”€yunche
-  â”‚  â”‚  â”‚          â””â”€controller
-  â”‚  â”‚  â””â”€resources
-  â”‚  â”‚      â”œâ”€public
-  â”‚  â”‚      â”œâ”€static
-  â”‚  â”‚      â”‚  â””â”€asserts
-  â”‚  â”‚      â”‚      â”œâ”€css
-  â”‚  â”‚      â”‚      â”œâ”€img
-  â”‚  â”‚      â”‚      â””â”€js
-  â”‚  â”‚      â””â”€templates
+  ©À©¤src
+  ©¦  ©À©¤main
+  ©¦  ©¦  ©À©¤java
+  ©¦  ©¦  ©¦  ©¸©¤com
+  ©¦  ©¦  ©¦      ©¸©¤yunche
+  ©¦  ©¦  ©¦          ©¸©¤controller
+  ©¦  ©¦  ©¸©¤resources
+  ©¦  ©¦      ©À©¤public
+  ©¦  ©¦      ©À©¤static
+  ©¦  ©¦      ©¦  ©¸©¤asserts
+  ©¦  ©¦      ©¦      ©À©¤css
+  ©¦  ©¦      ©¦      ©À©¤img
+  ©¦  ©¦      ©¦      ©¸©¤js
+  ©¦  ©¦      ©¸©¤templates
   ```
 
-# äºŒã€å®šåˆ¶é¦–é¡µ
+# ¶ş¡¢¶¨ÖÆÊ×Ò³
 
-## 1ã€ä¿®æ”¹ pom.xml
+## 1¡¢ĞŞ¸Ä pom.xml
 
-æ·»åŠ  jquery webjars ã€bootstrap webjarsã€thymeleaf ä¾èµ– 
+Ìí¼Ó jquery webjars ¡¢bootstrap webjars¡¢thymeleaf ÒÀÀµ 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -60,22 +99,22 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--å¼•å…¥ jquery webjars-->
-        <!--ä½¿ç”¨æ—¶ï¼šè·¯å¾„ webjars/jquery/3.3.1/jquery.js-->
+        <!--ÒıÈë jquery webjars-->
+        <!--Ê¹ÓÃÊ±£ºÂ·¾¶ webjars/jquery/3.3.1/jquery.js-->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
             <version>3.3.1</version>
         </dependency>
 
-        <!--å¼•å…¥ bootstrap webjars-->
+        <!--ÒıÈë bootstrap webjars-->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
             <version>4.2.1</version>
         </dependency>
 
-        <!--å¼•å…¥ thymeleaf3-->
+        <!--ÒıÈë thymeleaf3-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -100,87 +139,87 @@
 </project>
 ```
 
-## 2ã€å¼•å…¥ç›¸åº”çš„æœ¬åœ° cssã€js æ–‡ä»¶
+## 2¡¢ÒıÈëÏàÓ¦µÄ±¾µØ css¡¢js ÎÄ¼ş
 
-å°†å¯¹åº”çš„æ–‡ä»¶å¼•å…¥åˆ°ç›¸åº”çš„ä½ç½®
-
-```
-â”‚  â”‚      â”œâ”€static
-â”‚  â”‚      â”‚  â””â”€asserts
-â”‚  â”‚      â”‚      â”œâ”€css
-â”‚  â”‚      â”‚      â”‚      bootstrap.min.css
-â”‚  â”‚      â”‚      â”‚      dashboard.css
-â”‚  â”‚      â”‚      â”‚      signin.css
-â”‚  â”‚      â”‚      â”‚      
-â”‚  â”‚      â”‚      â”œâ”€img
-â”‚  â”‚      â”‚      â”‚      bootstrap-solid.svg
-â”‚  â”‚      â”‚      â”‚      
-â”‚  â”‚      â”‚      â””â”€js
-â”‚  â”‚      â”‚              bootstrap.min.js
-â”‚  â”‚      â”‚              Chart.min.js
-â”‚  â”‚      â”‚              feather.min.js
-â”‚  â”‚      â”‚              jquery-3.2.1.slim.min.js
-â”‚  â”‚      â”‚              popper.min.js
-```
-
-## 3ã€ç¼–è¾‘ login.html 
+½«¶ÔÓ¦µÄÎÄ¼şÒıÈëµ½ÏàÓ¦µÄÎ»ÖÃ
 
 ```
-â”‚  â”‚      â””â”€templates
-â”‚  â”‚              login.html
+©¦  ©¦      ©À©¤static
+©¦  ©¦      ©¦  ©¸©¤asserts
+©¦  ©¦      ©¦      ©À©¤css
+©¦  ©¦      ©¦      ©¦      bootstrap.min.css
+©¦  ©¦      ©¦      ©¦      dashboard.css
+©¦  ©¦      ©¦      ©¦      signin.css
+©¦  ©¦      ©¦      ©¦      
+©¦  ©¦      ©¦      ©À©¤img
+©¦  ©¦      ©¦      ©¦      bootstrap-solid.svg
+©¦  ©¦      ©¦      ©¦      
+©¦  ©¦      ©¦      ©¸©¤js
+©¦  ©¦      ©¦              bootstrap.min.js
+©¦  ©¦      ©¦              Chart.min.js
+©¦  ©¦      ©¦              feather.min.js
+©¦  ©¦      ©¦              jquery-3.2.1.slim.min.js
+©¦  ©¦      ©¦              popper.min.js
 ```
 
-ä½¿ç”¨ thymeleaf  å¯¹ login.html å®Œæˆ cssã€js ç­‰é“¾æ¥çš„ä¿®æ”¹
+## 3¡¢±à¼­ login.html 
+
+```
+©¦  ©¦      ©¸©¤templates
+©¦  ©¦              login.html
+```
+
+Ê¹ÓÃ thymeleaf  ¶Ô login.html Íê³É css¡¢js ¡¢form µÈÁ´½ÓµÄĞŞ¸Ä
 
 ```html
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <title>Signin Template for Bootstrap</title>
-      <!-- Bootstrap core CSS -->
-      <link href="asserts/css/bootstrap.min.css" rel="stylesheet" th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.css}">
-      <!-- Custom styles for this template -->
-      <link href="asserts/css/signin.css" rel="stylesheet" >
-   </head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Signin Template for Bootstrap</title>
+		<!-- Bootstrap core CSS -->
+		<link href="asserts/css/bootstrap.min.css" rel="stylesheet" th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.css}">
+		<!-- Custom styles for this template -->
+		<link href="asserts/css/signin.css" rel="stylesheet" th:href="@{/asserts/css/signin.css}">
+	</head>
 
-   <body class="text-center">
-      <form class="form-signin" action="dashboard.html">
-         <img class="mb-4" src="asserts/img/bootstrap-solid.svg" alt="" width="72" height="72">
-         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-         <label class="sr-only">Username</label>
-         <input type="text" class="form-control" placeholder="Username" required="" autofocus="">
-         <label class="sr-only">Password</label>
-         <input type="password" class="form-control" placeholder="Password" required="">
-         <div class="checkbox mb-3">
-            <label>
-          <input type="checkbox" value="remember-me"> Remember me
+	<body class="text-center">
+		<form class="form-signin" action="dashboard.html" method="post" th:action="@{/user/login}">
+			<img class="mb-4" src="asserts/img/bootstrap-solid.svg" th:src="@{/asserts/img/bootstrap-solid.svg}" alt="" width="72" height="72">
+			<h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">Please Sign In</h1>
+			<label class="sr-only" th:text="#{login.username}">Username</label>
+			<input type="text" name="username" class="form-control" placeholder="Username" th:placeholder="#{login.username}" required="" autofocus="">
+			<label class="sr-only" th:text="#{login.password}">Password</label>
+			<input type="password" name="password" class="form-control" placeholder="Password" required="" th:placeholder="#{login.password}">
+			<div class="checkbox mb-3">
+				<label>
+          <input type="checkbox" value="remember-me" > [[#{login.remember}]]
         </label>
-         </div>
-         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-         <p class="mt-5 mb-3 text-muted">Â© 2017-2018</p>
-         <a class="btn btn-sm"> ä¸­æ–‡ </a>
-         <a class="btn btn-sm">English</a>
-      </form>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.btn}">Sign in</button>
+			<p class="mt-5 mb-3 text-muted">? 2017-2018</p>
+			<a class="btn btn-sm" > ÖĞÎÄ </a>
+			<a class="btn btn-sm" >English</a>
+		</form>
 
-   </body>
+	</body>
 
 </html>
 ```
 
-## 4ã€å¤„ç†å¯¹ login é¡µé¢è¯·æ±‚çš„æ˜ å°„
+## 4¡¢´¦Àí¶Ô login Ò³ÃæÇëÇóµÄÓ³Éä
 
 ```
-â”‚  â”‚  â”‚          â”œâ”€config
-â”‚  â”‚  â”‚          â”‚      MyMvcConfig.java
-â”‚  â”‚  â”‚          â”‚      
-â”‚  â”‚  â”‚          â””â”€controller
+©¦  ©¦  ©¦          ©À©¤config
+©¦  ©¦  ©¦          ©¦      MyMvcConfig.java
+©¦  ©¦  ©¦          ©¦      
+©¦  ©¦  ©¦          ©¸©¤controller
 ```
 
-æ‰©å±• Spring MVCï¼Œæ·»åŠ è§†å›¾æ§åˆ¶å™¨ï¼Œå®Œæˆæˆ‘ä»¬è‡ªå·±çš„è·¯å¾„çš„æ˜ å°„è§„åˆ™
+À©Õ¹ Spring MVC£¬Ìí¼ÓÊÓÍ¼¿ØÖÆÆ÷£¬Íê³ÉÎÒÃÇ×Ô¼ºµÄÂ·¾¶µÄÓ³Éä¹æÔò
 
 ```java
 package com.yunche.config;
@@ -191,7 +230,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * @ClassName: MyMvcConfig
- * @Description: ç»ƒä¹ ï¼šä½¿ç”¨ WebMvcConfigurer æ‰©å±• SpringMVC çš„åŠŸèƒ½
+ * @Description: Á·Ï°£ºÊ¹ÓÃ WebMvcConfigurer À©Õ¹ SpringMVC µÄ¹¦ÄÜ
  * @author: yunche
  * @date: 2019/01/01
  */
@@ -207,18 +246,18 @@ public class MyMvcConfig implements WebMvcConfigurer {
 }
 ```
 
-## 5ã€å›½é™…åŒ–ç™»å½•é¡µé¢
+## 5¡¢¹ú¼Ê»¯µÇÂ¼Ò³Ãæ
 
-- ç¼–å†™å›½é™…åŒ–æ–‡ä»¶
+- ±àĞ´¹ú¼Ê»¯ÎÄ¼ş
 
   ```
-  â”‚  â”‚  â””â”€resources
-  â”‚  â”‚      â”‚  application.properties
-  â”‚  â”‚      â”‚  
-  â”‚  â”‚      â”œâ”€i18n
-  â”‚  â”‚      â”‚      login.en_US.properties
-  â”‚  â”‚      â”‚      login.properties
-  â”‚  â”‚      â”‚      login.zh_CN.properties
+  ©¦  ©¦  ©¸©¤resources
+  ©¦  ©¦      ©¦  application.properties
+  ©¦  ©¦      ©¦  
+  ©¦  ©¦      ©À©¤i18n
+  ©¦  ©¦      ©¦      login.en_US.properties
+  ©¦  ©¦      ©¦      login.properties
+  ©¦  ©¦      ©¦      login.zh_CN.properties
   ```
 
   - login_en_US.properties:
@@ -234,28 +273,28 @@ public class MyMvcConfig implements WebMvcConfigurer {
   - login.properties:
 
     ```properties
-    login.btn=ç™»å½•
-    login.password=å¯†ç 
-    login.remember=è®°ä½æˆ‘
-    login.tip=è¯·ç™»å½•
-    login.username=ç”¨æˆ·å
+    login.btn=µÇÂ¼
+    login.password=ÃÜÂë
+    login.remember=¼Ç×¡ÎÒ
+    login.tip=ÇëµÇÂ¼
+    login.username=ÓÃ»§Ãû
     ```
 
   - login_zh_CN.properties:
 
     ```properties
-    login.btn=ç™»å½•
-    login.password=å¯†ç 
-    login.remember=è®°ä½æˆ‘
-    login.tip=è¯·ç™»å½•
-    login.username=ç”¨æˆ·å
+    login.btn=µÇÂ¼
+    login.password=ÃÜÂë
+    login.remember=¼Ç×¡ÎÒ
+    login.tip=ÇëµÇÂ¼
+    login.username=ÓÃ»§Ãû
     ```
 
-- ç»‘å®šç¼–å†™çš„å›½é™…åŒ–é…ç½®æ–‡ä»¶åˆ° Message Source
+- °ó¶¨±àĞ´µÄ¹ú¼Ê»¯ÅäÖÃÎÄ¼şµ½ Message Source
 
   ```
-  â”‚  â”‚  â””â”€resources
-  â”‚  â”‚      â”‚  application.properties
+  ©¦  ©¦  ©¸©¤resources
+  ©¦  ©¦      ©¦  application.properties
   ```
 
   application.properties:
@@ -266,17 +305,17 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
   <div align="center">  <img src="/img/demo2.gif" width=""/> </div><br>
 
-- å®ç°æŒ‰é’®æ‰‹åŠ¨è½¬æ¢è¯­è¨€
+- ÊµÏÖ°´Å¥ÊÖ¶¯×ª»»ÓïÑÔ
 
-  - å›½é™…åŒ–æœ‰æ•ˆçš„åŸç†ï¼š
+  - ¹ú¼Ê»¯ÓĞĞ§µÄÔ­Àí£º
 
-    Locale å¯¹è±¡å­˜å‚¨åŒºåŸŸä¿¡æ¯ï¼Œ æ ¹æ® Locale æ¥è‡ªé€‚åº”è¯­è¨€é…ç½®ï¼Œé»˜è®¤çš„`LocaleResolver`å°±æ˜¯æ ¹æ®è¯·æ±‚å¤´å¸¦æ¥çš„åŒºåŸŸä¿¡æ¯ï¼ˆ`Accept-Language`ï¼‰è·å– Locale å¯¹è±¡ã€‚å¦‚æœéœ€è¦æ‰‹åŠ¨è½¬æ¢è¯­è¨€åªéœ€è¦æ‰‹åŠ¨æ„é€ `LocaleResolver`æ¥è‡ªå®šä¹‰ç”Ÿæˆ Locale å¯¹è±¡çš„è§„åˆ™ã€‚
+    Locale ¶ÔÏó´æ´¢ÇøÓòĞÅÏ¢£¬ ¸ù¾İ Locale À´×ÔÊÊÓ¦ÓïÑÔÅäÖÃ£¬Ä¬ÈÏµÄ`LocaleResolver`¾ÍÊÇ¸ù¾İÇëÇóÍ·´øÀ´µÄÇøÓòĞÅÏ¢£¨`Accept-Language`£©»ñÈ¡ Locale ¶ÔÏó¡£Èç¹ûĞèÒªÊÖ¶¯×ª»»ÓïÑÔÖ»ĞèÒªÊÖ¶¯¹¹Ôì`LocaleResolver`À´×Ô¶¨ÒåÉú³É Locale ¶ÔÏóµÄ¹æÔò¡£
 
-  - å®šåˆ¶ LocaleResolverï¼š
+  - ¶¨ÖÆ LocaleResolver£º
 
     ```
-    â”‚  â”‚  â”‚          â”œâ”€component
-    â”‚  â”‚  â”‚          â”‚      MyLocaleResolver.java
+    ©¦  ©¦  ©¦          ©À©¤component
+    ©¦  ©¦  ©¦          ©¦      MyLocaleResolver.java
     ```
 
     MyLocaleResolver.java:
@@ -306,7 +345,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
             Locale locale = Locale.getDefault();
             if (!StringUtils.isEmpty(l)) {
                 String[] split = l.split("_");
-                //æ ¹æ® Languageã€Country ç”Ÿæˆ locale
+                //¸ù¾İ Language¡¢Country Éú³É locale
                 locale = new Locale(split[0], split[1]);
             }
             return locale;
@@ -319,20 +358,20 @@ public class MyMvcConfig implements WebMvcConfigurer {
     }
     ```
 
-  - å°†å®šåˆ¶çš„ç»„ä»¶åŠ å…¥å®¹å™¨ä¸­
+  - ½«¶¨ÖÆµÄ×é¼ş¼ÓÈëÈİÆ÷ÖĞ
 
-    æ­¤æ—¶é»˜è®¤çš„ LocaleResolver å°†ä¸å†ç”Ÿæ•ˆï¼Œå°†ä½¿ç”¨æˆ‘ä»¬å®šåˆ¶çš„ LocaleResolverã€‚
+    ´ËÊ±Ä¬ÈÏµÄ LocaleResolver ½«²»ÔÙÉúĞ§£¬½«Ê¹ÓÃÎÒÃÇ¶¨ÖÆµÄ LocaleResolver¡£
 
     ```
-    â”‚  â”‚  â”‚          â”œâ”€config
-    â”‚  â”‚  â”‚          â”‚      MyMvcConfig.java
+    ©¦  ©¦  ©¦          ©À©¤config
+    ©¦  ©¦  ©¦          ©¦      MyMvcConfig.java
     ```
 
     MyMvcConfig.java:
 
     ```java
     /**
-     * æ³¨å†Œå®šåˆ¶ç»„ä»¶
+     * ×¢²á¶¨ÖÆ×é¼ş
      */
     @Bean
     public LocaleResolver localeResolver() {
@@ -340,15 +379,1466 @@ public class MyMvcConfig implements WebMvcConfigurer {
     }
     ```
 
-  - æ·»åŠ ç›¸åº”çš„é“¾æ¥å‚æ•°
+  - Ìí¼ÓÏàÓ¦µÄÁ´½Ó²ÎÊı
 
     login.html:
 
     ```html
-    <a class="btn btn-sm" th:href="@{/index(l='zh_CN')}"> ä¸­æ–‡ </a>
+    <a class="btn btn-sm" th:href="@{/index(l='zh_CN')}"> ÖĞÎÄ </a>
     <a class="btn btn-sm" th:href="@{/index(l='en_US')}">English</a>
     ```
 
-## 6ã€é˜¶æ®µæ¼”ç¤ºæ•ˆæœ
+## 6¡¢½×¶ÎÑİÊ¾Ğ§¹û
 
 <div align="center">  <img src="/img/demo3.gif" width=""/> </div><br>
+
+# Èı¡¢Íê³É login ²Ù×÷
+
+## 1¡¢Ìí¼Ó¿ØÖÆÆ÷ÓÃÓÚ´¦ÀíÇëÇó
+
+```java
+package com.yunche.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.PostMapping;
+
+/**
+ * @ClassName: LoginController
+ * @Description:
+ * @author: yunche
+ * @date: 2019/01/02
+ */
+@Controller
+public class LoginController {
+
+    @PostMapping("/user/login")
+    public String login(String username, String password) {
+        if ("admin".equals(username) && !StringUtils.isEmpty(password)) {
+            return "redirect:/main.html";
+        }
+        return "login";
+    }
+}
+```
+
+µ±ÓÃ»§µÇÂ¼³É¹¦ºó£¬ÖØ¶¨Ïòµ½ºóÌ¨Ê×Ò³¡£Ìí¼Ó¶Ô /main.html ÇëÇóµÄ´¦Àí£ºÔÚ MyMvcConfig ÏÂµÄ addViewControllers ·½·¨ÖĞ¼ÓÈë£º
+
+```java
+ registry.addViewController("/main.html").setViewName("dashboard");
+```
+
+## 2¡¢Ìí¼ÓºóÌ¨Ê×Ò³ dashboard.html
+
+```
+©¦  ©¦      ©¸©¤templates
+©¦  ©¦              dashboard.html
+```
+
+dashboard.html:
+
+```html
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <title>Dashboard Template for Bootstrap</title>
+      <!-- Bootstrap core CSS -->
+      <link href="asserts/css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+      <link href="asserts/css/dashboard.css" rel="stylesheet">
+      <style type="text/css">
+         /* Chart.js */
+         
+         @-webkit-keyframes chartjs-render-animation {
+            from {
+               opacity: 0.99
+            }
+            to {
+               opacity: 1
+            }
+         }
+         
+         @keyframes chartjs-render-animation {
+            from {
+               opacity: 0.99
+            }
+            to {
+               opacity: 1
+            }
+         }
+         
+         .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+         }
+      </style>
+   </head>
+
+   <body>
+      <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">Company name</a>
+         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+         <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+               <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">Sign out</a>
+            </li>
+         </ul>
+      </nav>
+
+      <div class="container-fluid">
+         <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+               <div class="sidebar-sticky">
+                  <ul class="nav flex-column">
+                     <li class="nav-item">
+                        <a class="nav-link active" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                           </svg>
+                           Dashboard <span class="sr-only">(current)</span>
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+                              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                              <polyline points="13 2 13 9 20 9"></polyline>
+                           </svg>
+                           Orders
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                              <circle cx="9" cy="21" r="1"></circle>
+                              <circle cx="20" cy="21" r="1"></circle>
+                              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                           </svg>
+                           Products
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+                              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                              <circle cx="9" cy="7" r="4"></circle>
+                              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                           </svg>
+                           Customers
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2">
+                              <line x1="18" y1="20" x2="18" y2="10"></line>
+                              <line x1="12" y1="20" x2="12" y2="4"></line>
+                              <line x1="6" y1="20" x2="6" y2="14"></line>
+                           </svg>
+                           Reports
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+                              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                              <polyline points="2 17 12 22 22 17"></polyline>
+                              <polyline points="2 12 12 17 22 12"></polyline>
+                           </svg>
+                           Integrations
+                        </a>
+                     </li>
+                  </ul>
+
+                  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Saved reports</span>
+              <a class="d-flex align-items-center text-muted" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+              </a>
+            </h6>
+                  <ul class="nav flex-column mb-2">
+                     <li class="nav-item">
+                        <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                              <polyline points="14 2 14 8 20 8"></polyline>
+                              <line x1="16" y1="13" x2="8" y2="13"></line>
+                              <line x1="16" y1="17" x2="8" y2="17"></line>
+                              <polyline points="10 9 9 9 8 9"></polyline>
+                           </svg>
+                           Current month
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                              <polyline points="14 2 14 8 20 8"></polyline>
+                              <line x1="16" y1="13" x2="8" y2="13"></line>
+                              <line x1="16" y1="17" x2="8" y2="17"></line>
+                              <polyline points="10 9 9 9 8 9"></polyline>
+                           </svg>
+                           Last quarter
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                              <polyline points="14 2 14 8 20 8"></polyline>
+                              <line x1="16" y1="13" x2="8" y2="13"></line>
+                              <line x1="16" y1="17" x2="8" y2="17"></line>
+                              <polyline points="10 9 9 9 8 9"></polyline>
+                           </svg>
+                           Social engagement
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                              <polyline points="14 2 14 8 20 8"></polyline>
+                              <line x1="16" y1="13" x2="8" y2="13"></line>
+                              <line x1="16" y1="17" x2="8" y2="17"></line>
+                              <polyline points="10 9 9 9 8 9"></polyline>
+                           </svg>
+                           Year-end sale
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+               <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                  <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                     <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                  </div>
+                  <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                     <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                  </div>
+               </div>
+               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                  <h1 class="h2">Dashboard</h1>
+                  <div class="btn-toolbar mb-2 mb-md-0">
+                     <div class="btn-group mr-2">
+                        <button class="btn btn-sm btn-outline-secondary">Share</button>
+                        <button class="btn btn-sm btn-outline-secondary">Export</button>
+                     </div>
+                     <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                This week
+              </button>
+                  </div>
+               </div>
+
+               <canvas class="my-4 chartjs-render-monitor" id="myChart" width="1076" height="454" style="display: block; width: 1076px; height: 454px;"></canvas>
+
+               
+            </main>
+         </div>
+      </div>
+
+      <!-- Bootstrap core JavaScript
+    ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js" ></script>
+      <script type="text/javascript" src="asserts/js/popper.min.js" ></script>
+      <script type="text/javascript" src="asserts/js/bootstrap.min.js" ></script>
+
+      <!-- Icons -->
+      <script type="text/javascript" src="asserts/js/feather.min.js" ></script>
+      <script>
+         feather.replace()
+      </script>
+
+      <!-- Graphs -->
+      <script type="text/javascript" src="asserts/js/Chart.min.js" ></script>
+      <script>
+         var ctx = document.getElementById("myChart");
+         var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+               labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+               datasets: [{
+                  data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                  lineTension: 0,
+                  backgroundColor: 'transparent',
+                  borderColor: '#007bff',
+                  borderWidth: 4,
+                  pointBackgroundColor: '#007bff'
+               }]
+            },
+            options: {
+               scales: {
+                  yAxes: [{
+                     ticks: {
+                        beginAtZero: false
+                     }
+                  }]
+               },
+               legend: {
+                  display: false,
+               }
+            }
+         });
+      </script>
+
+   </body>
+
+</html>
+```
+
+## 3¡¢Ìí¼ÓµÇÂ¼´íÎóÏûÏ¢Õ¹Ê¾
+
+LoginController£º
+
+```java
+@Controller
+public class LoginController {
+
+    @PostMapping("/user/login")
+    public String login(String username, String password, Map<String, Object> map, HttpSession session) {
+        if ("admin".equals(username) && "123".equals(password)) {
+            session.setAttribute("user", username);
+            return "redirect:/main.html";
+        }
+        map.put("loginState", "login fail");
+        return "login";
+    }
+}
+```
+
+login.html:
+
+```html
+<!--lead into js-->
+		<script src="../static/asserts/js/jquery-3.2.1.slim.min.js" th:src="@{/asserts/js/jquery-3.2.1.slim.min.js}"></script>
+		<script src="../static/asserts/js/popper.min.js" th:src="@{/asserts/js/popper.min.js}"></script>
+		<script src="../static/asserts/js/bootstrap.min.js" th:src="@{/asserts/js/bootstrap.min.js}"></script>
+		
+......
+<div th:switch="${loginState}">
+   <div class="alert alert-danger alert-dismissible fade show" role="alert" th:case="'login fail'">
+      [[#{login.result}]]
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+   <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}" th:case="*">Please Sign In</h1>
+</div>
+```
+
+ÔÚ¹ú¼Ê»¯ÎÄ¼şÌí¼Ó login.result ¼°ÏàÓ¦µÄÖµ¡£
+
+## 4¡¢¶¨ÖÆÀ¹½ØÆ÷
+
+- LoginHandlerInterceptor:
+
+```java
+package com.yunche.component;
+
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * @ClassName: LoginHandlerInterceptor
+ * @Description:
+ * @author: yunche
+ * @date: 2019/01/03
+ */
+public class LoginHandlerInterceptor implements HandlerInterceptor {
+
+    /**
+     * Ä¿±ê·½·¨Ö´ĞĞÇ°
+     * @param request
+     * @param response
+     * @param handler
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        Object user = request.getSession().getAttribute("user");
+        if (user == null) {
+            //Î´µÇÂ¼£¬·µ»ØµÇÂ¼Ò³Ãæ
+            //request.setAttribute("msg", "Ã»ÓĞÈ¨ÏŞÇëÏÈµÇÂ¼");
+            request.getRequestDispatcher("/index.html").forward(request, response);
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+
+    }
+
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+
+    }
+}
+```
+
+<div align="center">  <img src="/img/demo4.gif" width=""/> </div><br>
+
+# ËÄ¡¢Ô±¹¤µÄ CRUD
+
+Î´ÓëÊı¾İ¿â½øĞĞÁ¬½Ó£¬½ö×÷Ä£Äâ²Ù×÷¡£
+
+## 1¡¢ÒıÈëÏàÓ¦µÄ dao ºÍ entity Àà
+
+```
+©¦  ©À©¤dao
+©¦  ©¦      DepartmentDao.java
+©¦  ©¦      EmployeeDao.java
+©¦  ©¦      
+©¦  ©¸©¤entities
+©¦          Department.java
+©¦          Employee.java
+```
+
+- DepartmentDao.java:
+
+  ```java
+  package com.yunche.dao;
+  
+  import java.util.Collection;
+  import java.util.HashMap;
+  import java.util.Map;
+  
+  import com.yunche.entities.Department;
+  import org.springframework.stereotype.Repository;
+  
+  @Repository
+  public class DepartmentDao {
+  
+  	private static Map<Integer, Department> departments = null;
+  	
+  	static{
+  		departments = new HashMap<Integer, Department>();
+  		
+  		departments.put(101, new Department(101, "D-AA"));
+  		departments.put(102, new Department(102, "D-BB"));
+  		departments.put(103, new Department(103, "D-CC"));
+  		departments.put(104, new Department(104, "D-DD"));
+  		departments.put(105, new Department(105, "D-EE"));
+  	}
+  	
+  	public Collection<Department> getDepartments(){
+  		return departments.values();
+  	}
+  	
+  	public Department getDepartment(Integer id){
+  		return departments.get(id);
+  	}
+  	
+  }
+  
+  ```
+
+- EmployeeDao.java:
+
+  ```java
+  package com.yunche.dao;
+  
+  import java.util.Collection;
+  import java.util.HashMap;
+  import java.util.Map;
+  
+  import com.yunche.entities.Department;
+  import com.yunche.entities.Employee;
+  import org.springframework.beans.factory.annotation.Autowired;
+  import org.springframework.stereotype.Repository;
+  
+  @Repository
+  public class EmployeeDao {
+  
+  	private static Map<Integer, Employee> employees = null;
+  	
+  	@Autowired
+  	private DepartmentDao departmentDao;
+  	
+  	static{
+  		employees = new HashMap<Integer, Employee>();
+  
+  		employees.put(1001, new Employee(1001, "E-AA", "aa@163.com", 1, new Department(101, "D-AA")));
+  		employees.put(1002, new Employee(1002, "E-BB", "bb@163.com", 1, new Department(102, "D-BB")));
+  		employees.put(1003, new Employee(1003, "E-CC", "cc@163.com", 0, new Department(103, "D-CC")));
+  		employees.put(1004, new Employee(1004, "E-DD", "dd@163.com", 0, new Department(104, "D-DD")));
+  		employees.put(1005, new Employee(1005, "E-EE", "ee@163.com", 1, new Department(105, "D-EE")));
+  	}
+  	
+  	private static Integer initId = 1006;
+  	
+  	public void save(Employee employee){
+  		if(employee.getId() == null){
+  			employee.setId(initId++);
+  		}
+  		
+  		employee.setDepartment(departmentDao.getDepartment(employee.getDepartment().getId()));
+  		employees.put(employee.getId(), employee);
+  	}
+  	
+  	public Collection<Employee> getAll(){
+  		return employees.values();
+  	}
+  	
+  	public Employee get(Integer id){
+  		return employees.get(id);
+  	}
+  	
+  	public void delete(Integer id){
+  		employees.remove(id);
+  	}
+  }
+  
+  ```
+
+- Department.java:
+
+  ```
+  package com.yunche.entities;
+  
+  public class Department {
+  
+  	private Integer id;
+  	private String departmentName;
+  
+  	public Department() {
+  	}
+  	
+  	public Department(int i, String string) {
+  		this.id = i;
+  		this.departmentName = string;
+  	}
+  
+  	public Integer getId() {
+  		return id;
+  	}
+  
+  	public void setId(Integer id) {
+  		this.id = id;
+  	}
+  
+  	public String getDepartmentName() {
+  		return departmentName;
+  	}
+  
+  	public void setDepartmentName(String departmentName) {
+  		this.departmentName = departmentName;
+  	}
+  
+  	@Override
+  	public String toString() {
+  		return "Department [id=" + id + ", departmentName=" + departmentName + "]";
+  	}
+  	
+  }
+  
+  ```
+
+- Employee.java£º
+
+  ```java
+  	package com.yunche.entities;
+  
+  import java.util.Date;
+  
+  public class Employee {
+  
+  	private Integer id;
+      private String lastName;
+  
+      private String email;
+      //1 male, 0 female
+      private Integer gender;
+      private Department department;
+      private Date birth;
+  
+      public Integer getId() {
+          return id;
+      }
+  
+      public void setId(Integer id) {
+          this.id = id;
+      }
+  
+      public String getLastName() {
+          return lastName;
+      }
+  
+      public void setLastName(String lastName) {
+          this.lastName = lastName;
+      }
+  
+      public String getEmail() {
+          return email;
+      }
+  
+      public void setEmail(String email) {
+          this.email = email;
+      }
+  
+      public Integer getGender() {
+          return gender;
+      }
+  
+      public void setGender(Integer gender) {
+          this.gender = gender;
+      }
+  
+      public Department getDepartment() {
+          return department;
+      }
+  
+      public void setDepartment(Department department) {
+          this.department = department;
+      }
+  
+      public Date getBirth() {
+          return birth;
+      }
+  
+      public void setBirth(Date birth) {
+          this.birth = birth;
+      }
+      public Employee(Integer id, String lastName, String email, Integer gender,
+                      Department department) {
+          super();
+          this.id = id;
+          this.lastName = lastName;
+          this.email = email;
+          this.gender = gender;
+          this.department = department;
+          this.birth = new Date();
+      }
+  
+      public Employee() {
+      }
+  
+      @Override
+      public String toString() {
+          return "Employee{" +
+                  "id=" + id +
+                  ", lastName='" + lastName + '\'' +
+                  ", email='" + email + '\'' +
+                  ", gender=" + gender +
+                  ", department=" + department +
+                  ", birth=" + birth +
+                  '}';
+      }
+  }
+  ```
+
+## 2¡¢Restful ·ç¸ñµÄ URL
+
+| ÊµÑé¹¦ÄÜ                             | ÇëÇó URI | ÇëÇó·½Ê½ |
+| ------------------------------------ | -------- | -------- |
+| ²éÑ¯ËùÓĞÔ±¹¤                         | emps     | GET      |
+| ²éÑ¯Ä³¸öÔ±¹¤ (À´µ½ĞŞ¸ÄÒ³Ãæ)          | emp/1    | GET      |
+| À´µ½Ìí¼ÓÒ³Ãæ                         | emp      | GET      |
+| Ìí¼ÓÔ±¹¤                             | emp      | POST     |
+| À´µ½ĞŞ¸ÄÒ³Ãæ£¨²é³öÔ±¹¤½øĞĞĞÅÏ¢»ØÏÔ£© | emp/1    | GET      |
+| ĞŞ¸ÄÔ±¹¤                             | emp      | PUT      |
+| É¾³ıÔ±¹¤                             | emp/1    | DELETE   |
+
+## 3¡¢Ä£°å²¼¾Ö
+
+¿¼ÂÇµ½Ô±¹¤µÄ CRUD µÄÒ³Ãæ»áÓĞĞí¶à¹«¹²µÄÔªËØ£¬ËùÒÔ½«¹«¹²ÔªËØ³éÈ¡³öÀ´×÷ÎªÄ£°å¡£
+
+```
+©¦  ©¦      ©¸©¤templates
+©¦  ©¦          ©¦  dashboard.html
+©¦  ©¦          ©¦  login.html
+©¦  ©¦          ©¦  
+©¦  ©¦          ©À©¤commons
+©¦  ©¦          ©¦      sidebar.html
+©¦  ©¦          ©¦      topbar.html
+©¦  ©¦          ©¦      
+©¦  ©¦          ©À©¤emps
+©¦  ©¦          ©¦      add.html
+©¦  ©¦          ©¦      list.html
+
+```
+
+×¢ÒâÏÂÃæµÄ html Ò³Ãæ¶¼ÊÇ×îÖÕĞŞ¸ÄºóµÄÒ³Ãæ£¨Ê¡ÂÔÁË·±ËöµÄÓÅ»¯¹ı³Ì£©£¬Ò³ÃæÀïÃæµÄÒ»Ğ©Ï¸½Ú£¬ºóÃæ»á½éÉÜÒ»Ğ©¡£
+
+### 1¡¢dashboard.html£¨ºóÌ¨Ê×Ò³£©
+
+```html
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <title>Dashboard Template for Bootstrap</title>
+   <!-- Bootstrap core CSS -->
+   <link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Custom styles for this template -->
+   <link href="/asserts/css/dashboard.css" rel="stylesheet">
+   <style type="text/css">
+      /* Chart.js */
+
+      @-webkit-keyframes chartjs-render-animation {
+         from {
+            opacity: 0.99
+         }
+         to {
+            opacity: 1
+         }
+      }
+
+      @keyframes chartjs-render-animation {
+         from {
+            opacity: 0.99
+         }
+         to {
+            opacity: 1
+         }
+      }
+
+      .chartjs-render-monitor {
+         -webkit-animation: chartjs-render-animation 0.001s;
+         animation: chartjs-render-animation 0.001s;
+      }
+   </style>
+</head>
+
+<body>
+<!--ÒıÈë top bar-->
+<div th:replace="commons/topbar::topbar">
+
+</div>
+
+<div class="container-fluid">
+   <div class="row">
+
+      <!--ÒıÈë side bar-->
+      <div th:replace="commons/sidebar::sidebar(activeUrl='main.html')">
+
+      </div>
+
+      <!--Content-->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+         <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+            <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+               <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+            </div>
+            <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+               <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+            </div>
+         </div>
+         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+               <div class="btn-group mr-2">
+                  <button class="btn btn-sm btn-outline-secondary">Share</button>
+                  <button class="btn btn-sm btn-outline-secondary">Export</button>
+               </div>
+               <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  This week
+               </button>
+            </div>
+         </div>
+
+         <canvas class="my-4 chartjs-render-monitor" id="myChart" width="1076" height="454" style="display: block; width: 1076px; height: 454px;"></canvas>
+
+
+      </main>
+
+   </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/asserts/js/jquery-3.2.1.slim.min.js" ></script>
+<script type="text/javascript" src="/asserts/js/popper.min.js" ></script>
+<script type="text/javascript" src="/asserts/js/bootstrap.min.js" ></script>
+
+<!-- Icons -->
+<script type="text/javascript" src="/asserts/js/feather.min.js" ></script>
+<script>
+    feather.replace()
+</script>
+
+<!-- Graphs -->
+<script type="text/javascript" src="/asserts/js/Chart.min.js" ></script>
+<script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            datasets: [{
+                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                lineTension: 0,
+                backgroundColor: 'transparent',
+                borderColor: '#007bff',
+                borderWidth: 4,
+                pointBackgroundColor: '#007bff'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }]
+            },
+            legend: {
+                display: false,
+            }
+        }
+    });
+</script>
+
+</body>
+
+</html>
+```
+
+### 2¡¢sidebar.html£¨²à±ßÀ¸Ä£°å£©
+
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--side bar-->
+<nav class="col-md-2 d-none d-md-block bg-light sidebar" th:fragment="sidebar">
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" th:href="@{/main.html}" th:class="${activeUrl}=='main.html'?'nav-link active':'nav-link'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Dashboard <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                        <polyline points="13 2 13 9 20 9"></polyline>
+                    </svg>
+                    Orders
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    Products
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" th:href="@{/emps}" th:class="${activeUrl}=='emps'?'nav-link active':'nav-link'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    Ô±¹¤¹ÜÀí
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    Reports
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    Integrations
+                </a>
+            </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Saved reports</span>
+            <a class="d-flex align-items-center text-muted" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Current month
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Last quarter
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Social engagement
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Year-end sale
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</body>
+</html>
+```
+
+### 3¡¢topbar.html£¨¶¥²¿À¸Ä£°å£©
+
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--top bar-->
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0" th:fragment = "topbar">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">[[${session.user}]]</a>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">Sign out</a>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>
+```
+
+### 4¡¢list.html£¨Ô±¹¤ÁĞ±íÒ³Ãæ£©
+
+```html
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/asserts/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">
+        /* Chart.js */
+
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+</head>
+
+<body>
+<!--ÒıÈë top bar-->
+<div th:replace="commons/topbar::topbar">
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!--ÒıÈë side bar-->
+        <div th:replace="commons/sidebar::sidebar(activeUrl='emps')">
+
+        </div>
+
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <h2><a class="btn btn-sm btn-success" href="emp" th:href="@{/emp}"> Ô±¹¤Ìí¼Ó </a></h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>lastName</th>
+                        <th>email</th>
+                        <th>gender</th>
+                        <th>department</th>
+                        <th>birth</th>
+                        <th> ²Ù×÷ </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="emp:${emps}">
+                        <td th:text="${emp.id}"></td>
+                        <td th:text="${emp.lastName}"></td>
+                        <td th:text="${emp.email}"></td>
+                        <td th:text="${emp.gender}=='0'?' Å® ':' ÄĞ '"></td>
+                        <td th:text="${emp.department.departmentName}"></td>
+                        <td th:text="${#dates.format(emp.birth, 'yyyy-MM-dd HH:mm')}"></td>
+                        <td>
+                            <a class="btn btn-sm btn-primary" th:href="@{/emp/}+${emp.id}"> ±à¼­ </a>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" th:attr="data-target=@{#del}+${emp.id}">
+                                É¾³ı
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" th:id="@{del}+${emp.id}" tabindex="-1" role="dialog"th:attr="aria-labelledby=@{delLabe}+${emp.id}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" th:id="@{delLabe}+${emp.id}"> É¾³ıÔ±¹¤ </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="text-danger"> È·¶¨ÒªÉ¾³ı£¿¸Ã²Ù×÷²»¿É³·Ïú£¡</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"> È¡Ïû </button>
+                                            <button type="button" class="btn btn-primary deleteBtn" th:attr="delurl=@{/emp/}+${emp.id}"> È·¶¨ </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <form id="delForm" method="post">
+            <input type="hidden" name="_method" value="delete">
+        </form>
+
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/asserts/js/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="/asserts/js/popper.min.js"></script>
+<script type="text/javascript" src="/asserts/js/bootstrap.min.js"></script>
+
+<!-- Icons -->
+<script type="text/javascript" src="/asserts/js/feather.min.js"></script>
+<script>
+    feather.replace();
+</script>
+<script>
+    $(document).ready(function () {
+        $(".deleteBtn").click(function () {
+            $("#delForm").attr("action",$(this).attr("delurl")).submit();
+        });
+    });
+
+</script>
+
+</body>
+
+</html>
+```
+
+### 5¡¢add.html£¨Ô±¹¤µÄÌí¼Ó¡¢ĞŞ¸Ä¶şºÏÒ»Ò³Ãæ£©
+
+```html
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/asserts/css/dashboard.css" rel="stylesheet">
+    <style type="text/css">
+        /* Chart.js */
+
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+</head>
+
+<body>
+<!--ÒıÈë top bar-->
+<div th:replace="commons/topbar::topbar">
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!--ÒıÈë side bar-->
+        <div th:replace="commons/sidebar::sidebar(activeUrl='emps')">
+
+        </div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <!--ĞèÒªÇø·ÖÊÇÔ±¹¤ĞŞ¸Ä»¹ÊÇÌí¼Ó£»-->
+            <form th:action="@{/emp}" method="post">
+                <!--Ìí¼ÓÒş²ØÓò£¬ÓÃÓÚ·¢ËÍ put ÇëÇóĞŞ¸Ä±íµ¥-->
+                <input type="hidden" name="_method" value="put" th:if="${emp!=null}"/>
+                <input type="hidden" name="id" th:if="${emp!=null}" th:value="${emp.id}">
+                <div class="form-group">
+                    <label>LastName</label>
+                    <input name="lastName" type="text" class="form-control" placeholder="zhangsan" th:value="${emp}!=null?${emp.lastName}:''">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input name="email" type="text" class="form-control" placeholder="xxx@qq.com"
+                    th:value="${emp}!=null?${emp.email}:''">
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="1" th:checked="${emp}!=null?(${emp.gender}==1):false">
+                        <label class="form-check-label"> ÄĞ </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="0" th:checked="${emp}!=null?(${emp.gender}==0):false">
+                        <label class="form-check-label"> Å® </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Department</label>
+                    <select class="form-control" name="department.id">
+                        <option th:selected="${dept.id == emp.department.id}" th:value="${dept.id}" th:each="dept:${departments}" th:text="${dept.departmentName}" th:if="${emp!=null}"></option>
+                        <option th:value="${dept.id}" th:each="dept:${departments}" th:text="${dept.departmentName}" th:if="${emp==null}"></option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Birth</label>
+                    <input name="birth" type="text" class="form-control" placeholder="2017/01/01 12:23" th:value="${emp!=null}?${#dates.format(emp.birth,'yyyy/MM/dd HH:mm')}">
+                </div>
+                <button type="submit" class="btn btn-primary" th:text="${emp==null}?' Ìí¼Ó ':' ĞŞ¸Ä '"> Ìí¼Ó </button>
+            </form>
+        </main>
+
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/asserts/js/jquery-3.2.1.slim.min.js" ></script>
+<script type="text/javascript" src="/asserts/js/popper.min.js" ></script>
+<script type="text/javascript" src="/asserts/js/bootstrap.min.js" ></script>
+
+<!-- Icons -->
+<script type="text/javascript" src="/asserts/js/feather.min.js" ></script>
+<script>
+    feather.replace()
+</script>
+
+
+</body>
+
+</html>
+```
+
+## 4¡¢EmployeeController£¨´¦ÀíÔ±¹¤ÇëÇó¿ØÖÆÆ÷£©
+
+```java
+package com.yunche.controller;
+
+import com.yunche.dao.DepartmentDao;
+import com.yunche.dao.EmployeeDao;
+import com.yunche.entities.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+
+/**
+ * @ClassName: EmployeeController
+ * @Description:
+ * @author: yunche
+ * @date: 2019/01/03
+ */
+@Controller
+public class EmployeeController {
+
+    @Autowired
+    EmployeeDao employeeDao;
+
+    @Autowired
+    DepartmentDao departmentDao;
+    @GetMapping("/emps")
+    public String list(Model model) {
+        model.addAttribute("emps", employeeDao.getAll());
+        return "emps/list";
+    }
+
+
+    /**
+     * À´µ½Ìí¼ÓÒ³Ãæ
+     *
+     * @return
+     */
+    @GetMapping("/emp")
+    public String toAddPage(Model model) {
+        model.addAttribute("departments", departmentDao.getDepartments());
+        return "emps/add";
+    }
+
+    /**
+     * Ìí¼ÓÔ±¹¤
+     * SpringMVC ×Ô¶¯½«ÇëÇó²ÎÊıºÍÈë²Î¶ÔÏóµÄÊôĞÔ½øĞĞÒ»Ò»°ó¶¨£»
+     * ÒªÇóÇëÇó²ÎÊıµÄÃû×ÖºÍ javaBean Èë²ÎµÄ¶ÔÏóÀïÃæµÄÊôĞÔÃûÊÇÒ»ÑùµÄ
+     * @return
+     */
+    @PostMapping("/emp")
+    public String addEmployee(Employee employee) {
+        employeeDao.save(employee);
+        return "redirect:/emps";
+    }
+
+    /**
+     * À´µ½ĞŞ¸ÄÒ³Ãæ
+     *
+     * @return
+     */
+    @GetMapping("/emp/{id}")
+    public String toEditPage(@PathVariable("id") Integer id, Model model) {
+        Employee employee = employeeDao.get(id);
+        model.addAttribute("emp", employee);
+        model.addAttribute("departments", departmentDao.getDepartments());
+        return "emps/add";
+    }
+
+    /**
+     * ĞŞ¸ÄÔ±¹¤
+     * @param employee
+     * @return
+     */
+    @PutMapping("/emp")
+    public String editEmployee(Employee employee) {
+        employeeDao.save(employee);
+        return "redirect:/emps";
+    }
+
+    /**
+     * É¾³ıÔ±¹¤
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/emp/{id}")
+    public String removeEmployee(@PathVariable("id") Integer id) {
+        employeeDao.delete(id);
+        return "redirect:/emps";
+    }
+}
+```
+
+## 5¡¢Ï¸½Ú½²½â
+
+### 1¡¢PUT¡¢DELTE ÇëÇó
+
+ÓÉÓÚ form ±íµ¥Ö»ÔÊĞíÊ¹ÓÃ POST ÇëÇó£¬ÄÇÃ´ÔõÃ´ÒÔ PUT¡¢DELETE ÇëÇóÌá½»±íµ¥ÄØ£¿¿ÉÒÔÔÚ±íµ¥ÖĞÌí¼ÓÒ»¸öÒş²ØÓò£¨Spring Boot ÖĞ µÄ WebMvcAutoConfiguration ÖĞÓĞÏàÓ¦´¦ÀíÒş²ØÓòµÄ·½·¨£©£¬Ê¹ÓÃÒş²ØÓòÀ´´ïµ½ÒÔ PUT¡¢DELETE ÇëÇóÌá½»±íµ¥µÄĞ§¹û¡£Èç£º
+
+```html
+   <!--Ìí¼ÓÒş²ØÓò£¬ÓÃÓÚ·¢ËÍ put ÇëÇóĞŞ¸Ä±íµ¥-->
+                <input type="hidden" name="_method" value="put" th:if="${emp!=null}"/>
+```
+
+### 2¡¢¸øÄ£°åÒ³Ãæ´«²Î
+
+ÔÚÕâÀïµÄÀı×ÓÊÇÎÒÃÇÒªÊµÏÖµ±½øÈëºóÌ¨Ê×Ò³Ê±£¬²à±ßÀ¸ÉÏµÄ dashboard ¸ßÁÁ£»µ±½øÈëÔ±¹¤¹ÜÀíÊ±£¬²à±ßÀ¸µÄÔ±¹¤¹ÜÀí¸ßÁÁ¡£ÒªÊµÏÖÕâÑùµÄĞ§¹û£¬ÎÒÃÇ¿ÉÒÔÊ¹ÓÃ¸øÄ£°åÒ³Ãæ´«²ÎµÄ·½Ê½£¬ÓÃÀ´Çø±ğµ½µ×½øÈëÁËÄÄ¸öÒ³Ãæ£¬È»ºó¸ù¾İ²ÎÊıµÄ²»Í¬£¬À´ÊµÏÖÏàÓ¦µÄĞ§¹û¡£
+
+±ÈÈç¸øÄ£°åÒ³Ãæ´«Èë²ÎÊı£º
+
+```html
+ <!--ÒıÈë side bar-->
+        <div th:replace="commons/sidebar::sidebar(activeUrl='emps')">
+
+        </div>
+```
+
+¸ù¾İ²ÎÊıµÄÖµÊµÏÖÏàÓ¦µÄĞ§¹û£º
+
+```html
+         <li class="nav-item">
+             
+                <a class="nav-link" href="#" th:href="@{/emps}" th:class="${activeUrl}=='emps'?'nav-link active':'nav-link'">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    Ô±¹¤¹ÜÀí
+                </a>
+            </li>
+```
+
+### 3¡¢Ìí¼Ó¡¢ĞŞ¸ÄÒ³Ãæ¹²ÓÃ
+
+ÎÒÃÇÌí¼Ó¡¢ĞŞ¸ÄÊÇ¹²ÓÃÒ»¸öÒ³ÃæµÄ£¬ËùÒÔÓ¦¸Ã¸ù¾İÄ³¸ö±äÁ¿À´Çø·Ö£¬µ½µ×¸ÃÏÔÊ¾Ìí¼ÓÒ³ÃæµÄĞ§¹û»¹ÊÇĞŞ¸ÄÒ³ÃæµÄĞ§¹û¡£ÔÚÕâÀïÊÇÍ¨¹ı emp ±äÁ¿, Èç¹ûÒ³ÃæÄÜ¹»»ñÈ¡µ½ emp ±äÁ¿µÄÖµ£¬ËµÃ÷Ó¦¸Ã½øĞĞĞŞ¸Ä²Ù×÷£»·ñÔò£¬½øĞĞÌí¼Ó²Ù×÷¡£
+
+```java
+     model.addAttribute("emp", employee);
+```
+
+```html
+<button type="submit" class="btn btn-primary" th:text="${emp==null}?' Ìí¼Ó ':' ĞŞ¸Ä '"> Ìí¼Ó </button>
+```
+
+## 6¡¢¶¨ÖÆ´íÎóÒ³Ãæ
+
+ÖØĞÂĞŞ¸ÄÀ¹½ØÆ÷£¬±ãÓÚÑİÊ¾¡£
+
+MyMvcConfig£º
+
+```java
+  @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+//        //ÅÅ³ı¾²Ì¬×ÊÔ´µÄÀ¹½Ø£º*.css , *.js
+//        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/index.html", "/index", "/user/login", "/asserts/**","/webjars/**");
+
+        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/main.html", "/emps", "/emp/*");
+    }
+```
+
+Ä¬ÈÏµÄ´¦Àí·½·¨ÊÇ¸ù¾İÏàÓ¦×´Ì¬ÂëµÄÖµ£¬ÔÚ templates/error ÖĞµÄÎÄ¼ş¼ĞÖĞÑ°ÕÒÏàÓ¦Æ¥ÅäµÄ html Ò³Ãæ£¬¿ÉÒÔ
+
+±àĞ´ 4xx.html, 5xx.html£¬Ò²¿É±àĞ´ 404.html£¬¾«È·ÓÅÏÈ¡£
+
+404.html:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404 NOT FOUND</title>
+</head>
+<body>
+<img src="/asserts/img/very_sorry.png">
+</body>
+</html>
+```
+
+## 7¡¢½×¶ÎÑİÊ¾Ğ§¹û
+
+<div align="center">  <img src="/img/demo5.gif" width=""/> </div><br>

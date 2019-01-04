@@ -9,20 +9,37 @@
 		<!-- Bootstrap core CSS -->
 		<link href="asserts/css/bootstrap.min.css" rel="stylesheet" th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.css}">
 		<!-- Custom styles for this template -->
-		<link href="asserts/css/signin.css" rel="stylesheet" >
+		<link href="asserts/css/signin.css" rel="stylesheet" th:href="@{/asserts/css/signin.css}">
+
+		<!--lead into js-->
+		<script src="../static/asserts/js/jquery-3.2.1.slim.min.js" th:src="@{/asserts/js/jquery-3.2.1.slim.min.js}"></script>
+		<script src="../static/asserts/js/popper.min.js" th:src="@{/asserts/js/popper.min.js}"></script>
+		<script src="../static/asserts/js/bootstrap.min.js" th:src="@{/asserts/js/bootstrap.min.js}"></script>
+
 	</head>
 
 	<body class="text-center">
-		<form class="form-signin" action="dashboard.html">
-			<img class="mb-4" src="asserts/img/bootstrap-solid.svg" alt="" width="72" height="72">
-			<h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">Please Sign In</h1>
+	<form class="form-signin" action="dashboard.html" method="post" th:action="@{/user/login}">
+			<img class="mb-4" src="asserts/img/bootstrap-solid.svg" th:src="@{/asserts/img/bootstrap-solid.svg}" alt="" width="72" height="72">
+			<div th:switch="${loginState}">
+				<div class="alert alert-danger alert-dismissible fade show" role="alert" th:case="'login fail'">
+					[[#{login.result}]]
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}" th:case="*">Please Sign In</h1>
+			</div>
+
+
 			<label class="sr-only" th:text="#{login.username}">Username</label>
-			<input type="text" class="form-control" placeholder="Username" th:placeholder="#{login.username}" required="" autofocus="">
+			<input type="text" name="username" class="form-control" placeholder="Username" th:placeholder="#{login.username}" required autofocus="">
 			<label class="sr-only" th:text="#{login.password}">Password</label>
-			<input type="password" class="form-control" placeholder="Password" required="" th:placeholder="#{login.password}">
+			<input type="password" name="password" class="form-control" placeholder="Password" required="" th:placeholder="#{login.password}">
 			<div class="checkbox mb-3">
 				<label>
           <input type="checkbox" value="remember-me" > [[#{login.remember}]]
+
         </label>
 			</div>
 			<button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.btn}">Sign in</button>
